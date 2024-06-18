@@ -117,7 +117,11 @@ namespace WindowsFormsApp3
 
             txtCalc.Text = txtCalc.Text + "9";
         }
-
+                                                                                                                                                                                                private void lblWatermark_MouseHover(object sender, EventArgs e)
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    //Watermark ko'to
+                                                                                                                                                                                                }
+        //Here are the operations
         private void btnEqual_Click(object sender, EventArgs e)
         {
             
