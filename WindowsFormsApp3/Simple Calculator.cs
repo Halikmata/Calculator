@@ -125,11 +125,31 @@ namespace WindowsFormsApp3
             if (operator1 == 2)
             {
                 ans = num1 + num2;
+                txtPrev.Text = txtPrev.Text + txtCalc.Text + "=" + Convert.ToString(ans);
                 txtCalc.Text = Convert.ToString(ans);
             }
             else if (operator1 == 1)
             {
                 ans = num1 - num2;
+                txtPrev.Text = txtPrev.Text + txtCalc.Text + "=" + Convert.ToString(ans);
+                txtCalc.Text = Convert.ToString(ans);
+            }
+            else if (operator1 == 3)
+            {
+                ans = Math.Pow(num1, num2);
+                txtPrev.Text = txtPrev.Text + txtCalc.Text + "=" + Convert.ToString(ans);
+                txtCalc.Text = Convert.ToString(ans);
+            }
+            else if (operator1 == 4)
+            {
+                ans = num1 * num2;
+                txtPrev.Text = txtPrev.Text + txtCalc.Text + "=" + Convert.ToString(ans);
+                txtCalc.Text = Convert.ToString(ans);
+            }
+            else if (operator1 == 5)
+            {
+                ans = num1 / num2;
+                txtPrev.Text = txtPrev.Text + txtCalc.Text + "=" + Convert.ToString(ans);
                 txtCalc.Text = Convert.ToString(ans);
             }
         }
@@ -137,6 +157,8 @@ namespace WindowsFormsApp3
         private void btnMinus_Click(object sender, EventArgs e)
         {
             num1 = Convert.ToDouble(txtCalc.Text);
+            txtPrev.Text = "";
+            txtPrev.Text = txtPrev.Text + txtCalc.Text + "-";
             txtCalc.Text = "0";
             operator1 = 1;
         }
@@ -144,8 +166,35 @@ namespace WindowsFormsApp3
         private void btnPlus_Click(object sender, EventArgs e)
         {
             num1 = Convert.ToDouble(txtCalc.Text);
+            txtPrev.Text = "";
+            txtPrev.Text = txtPrev.Text + txtCalc.Text + "+";
             txtCalc.Text = "0";
             operator1 = 2;
+        }
+
+        private void btnExponent_Click(object sender, EventArgs e)
+        {
+            num1 = Convert.ToDouble(txtCalc.Text);
+            txtPrev.Text = "";
+            txtPrev.Text = txtPrev.Text + txtCalc.Text + "^";
+            txtCalc.Text = "0";
+            operator1 = 3;
+        }
+        private void btnMultiply_Click(object sender, EventArgs e)
+        {
+            num1 = Convert.ToDouble(txtCalc.Text);
+            txtPrev.Text = "";
+            txtPrev.Text = txtPrev.Text + txtCalc.Text + "x";
+            txtCalc.Text = "0";
+            operator1 = 4;
+        }
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+            num1 = Convert.ToDouble(txtCalc.Text);
+            txtPrev.Text = "";
+            txtPrev.Text = txtPrev.Text + txtCalc.Text + "÷";
+            txtCalc.Text = "0";
+            operator1 = 5;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -159,7 +208,5 @@ namespace WindowsFormsApp3
         {
             txtCalc.Text = "0";
         }
-
-       
     }
 }
